@@ -15,12 +15,16 @@ public class MainActivity extends AppCompatActivity {
 
         Button nxt;
         nxt = findViewById(R.id.btnNext);
+        Intent iNext;
+        iNext = new Intent(MainActivity.this,SecondActivity.class);
+        iNext.putExtra("title","Home");
+        iNext.putExtra("StudentName","Raman");
+        iNext.putExtra("Roll no:",10);
 
         nxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent iNext;
-                iNext = new Intent(MainActivity.this,SecondActivity.class);
+
                 startActivity(iNext);
             }
         });
