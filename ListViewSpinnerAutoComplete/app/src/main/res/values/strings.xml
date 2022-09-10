@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ListView,Spinner&amp;AutoComplete</string>
+    <string name="select">Select</string>
+    <string name="select_an_id_proof">Select an Id Proof</string>
+    <string name="search_here">Search here...</string>
+</resources>
