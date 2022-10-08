@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E2F429"/>
+<!--            <stroke android:color="@color/black"-->
+<!--                android:width="10dp"/>-->
+<!--                android:dashWidth="5dp"-->
+<!--                android:dashGap="2dp"-->
+
+            <corners
+
+                android:topRightRadius="25dp"
+                android:bottomLeftRadius="25dp"
+
+                />
+<!--            android:radius="30dp"-->
+<!--size will give the default size to this button, if we take width and height -->
+            <!--wrap content, then size will be thw default size-->
+            <size android:width="150dp"
+                android:height="200dp"/>
+
+            <gradient android:startColor="#E37A7A"
+                android:endColor="#CF0E00"
+                android:centerColor="#D6443B"
+                android:angle="90"
+                android:type="radial"
+                android:gradientRadius="100dp"
+                />
+
+        </shape>
+    </item>
+
+</selector>
