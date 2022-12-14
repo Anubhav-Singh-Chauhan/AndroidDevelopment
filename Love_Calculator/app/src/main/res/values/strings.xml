@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Love_Calculator</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_second_name">Enter Second Name</string>
+    <string name="calculate_love">Calculate Love</string>
+</resources>
