@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void stopService(View view) {
-
         Intent notificationIntent = new Intent(this,ServiceMine.class);
         notificationIntent.setAction("stop");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -101,11 +100,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startServiceV(View view) {
-
-
-
-
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED  ) {
             Intent notificationIntent = new Intent(this,ServiceMine.class);
             notificationIntent.setAction("Start");

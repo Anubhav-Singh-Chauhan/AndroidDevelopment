@@ -16,7 +16,6 @@ public class RegisterNumberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_number);
-
         number = findViewById(R.id.numberEdit);
     }
 
