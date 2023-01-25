@@ -3,6 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.women_safety_application">
 
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,17 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Women_safety_application"
         tools:targetApi="31">
-        <activity
-            android:name=".Service"
-            android:exported="false" />
-        <activity
-            android:name=".SplashScreen"
-            android:exported="false" />
-        <activity
-            android:name=".NumberRegister"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+
+        <activity android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +31,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".NumberRegister"
+            android:exported="false" />
+        <service
+            android:name=".Service1"
+            android:enabled="true"
+            android:foregroundServiceType="location" />
+        <activity
+            android:name=".MainActivity" />
     </application>
 
 </manifest>
