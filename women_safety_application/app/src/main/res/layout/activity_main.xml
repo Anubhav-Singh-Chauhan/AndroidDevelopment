@@ -30,7 +30,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:text="SOS Will Be Sent To\n"
-            android:textStyle="bold"
+            android:textStyle="bold|italic"
             android:layout_centerHorizontal="true"
             android:id="@+id/textNum"/>
 
@@ -50,6 +50,7 @@
             android:layout_marginBottom="10dp"
             android:id="@+id/start"
             android:textColor="@color/black"
+            android:textStyle="bold"
             android:text="Start"/>
 
         <com.google.android.material.button.MaterialButton
@@ -59,6 +60,7 @@
             app:layout_constraintTop_toBottomOf="@id/start"
             app:layout_constraintEnd_toEndOf="parent"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_below="@id/start"
             app:cornerRadius="10dp"
