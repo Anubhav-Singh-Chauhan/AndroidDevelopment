@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
     defaultConfig {
         applicationId "org.tensorflow.lite.examples.classification"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
     }
@@ -15,15 +15,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    aaptOptions {
-        noCompress "tflite"
-    }
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
-    lintOptions {
+    lint {
         abortOnError false
+    }
+    androidResources {
+        noCompress 'tflite'
     }
 }
 
@@ -38,9 +38,19 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
 
     // Build off of nightly TensorFlow Lite
-    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
-    implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
-    implementation 'org.tensorflow:tensorflow-lite-support:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite:2.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.3.1'
+    androidTestImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    implementation 'com.google.truth:truth:1.0.1'
+    androidTestImplementation "com.google.truth:truth::0.40"
+    testImplementation "com.google.truth.extensions:truth-java8-extension:1.0.1"
+
     // Use local TensorFlow library
     // implementation 'org.tensorflow:tensorflow-lite-local:0.0.0'
 }

@@ -22,26 +22,29 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
+
+import androidx.test.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;
+
+import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.tensorflow.lite.examples.classification.tflite.Classifier;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Model;
+import org.tensorflow.lite.examples.classification.tflite.Classifier.Recognition;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-import org.junit.Assert;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.tensorflow.lite.examples.classification.tflite.Classifier;
-import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
-import org.tensorflow.lite.examples.classification.tflite.Classifier.Model;
-import org.tensorflow.lite.examples.classification.tflite.Classifier.Recognition;
 
 /** Golden test for Image Classification Reference app. */
-@RunWith(AndroidJUnit4.class)
+@RunWith(JUnit4.class)
 public class ClassifierTest {
 
   @Rule

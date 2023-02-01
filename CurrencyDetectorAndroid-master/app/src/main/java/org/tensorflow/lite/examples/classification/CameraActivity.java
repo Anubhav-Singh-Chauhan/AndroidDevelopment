@@ -17,6 +17,7 @@
 package org.tensorflow.lite.examples.classification;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -347,24 +348,7 @@ public abstract class CameraActivity extends AppCompatActivity
     mp1 = MediaPlayer.create(this, R.raw.ten);
     mp2 = MediaPlayer.create(this, R.raw.five);
 
- /*   mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-      @Override
-      public void onCompletion(MediaPlayer mp) {
-        mp.release();
-      }
-    });
-    mp1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-      @Override
-      public void onCompletion(MediaPlayer mp) {
-        mp.release();
-      }
-    });
-    mp2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-      @Override
-      public void onCompletion(MediaPlayer mp) {
-        mp.release();
-      }
-    });*/
+    //handle each sample object(one dataset from model) [Teachable machine]
   }
 
   @Override
@@ -404,6 +388,7 @@ public abstract class CameraActivity extends AppCompatActivity
   @Override
   public void onRequestPermissionsResult(
       final int requestCode, final String[] permissions, final int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     if (requestCode == PERMISSIONS_REQUEST) {
       if (allPermissionsGranted(grantResults)) {
         setFragment();
@@ -553,6 +538,7 @@ public abstract class CameraActivity extends AppCompatActivity
 boolean hun = false;
   boolean five = false;
   boolean ten = false;
+  @SuppressLint({"DefaultLocale", "SetTextI18n"})
   @UiThread
   protected void showResultsInBottomSheet(List<Recognition> results) {
 
@@ -575,12 +561,13 @@ boolean hun = false;
             hun = true;
             five =false;
             ten = false;
-          } else if (!ten&&recognitionTextView.getText().toString().equalsIgnoreCase("10")&& confi>90 ) {
+          } else if (!ten&&recognitionTextView.getText().toString().equalsIgnoreCase("10")&& confi>99) {
             mp1.start();
             ten  =true;
             five =false;
             hun = false;
           }
+
         }catch (Exception e){
           e.printStackTrace();
         }
